@@ -1,0 +1,168 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> jss cards</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row first_row mb-3">
+            <button class="first_decorative_div mr-2 bg-primary">
+            </button>
+            <button class="second_decorative_div bg-warning"></button>
+        </div>
+    </div>
+
+    <div class="container first">
+        <div class="row">
+            
+            <div class="col-md-4 my-2 pr-0">
+              
+            </div>
+
+            <div class="col-md-4 my-2 pr-0">
+                
+            </div>
+            <div class="col-md-4 my-2 pr-0">
+               
+            </div>
+            <div class="col-md-4 my-2 pr-0">
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script>
+
+var inner_data=[{id:1,card_title:"Card Title",card_body:"Lorem ipsum dolor sit amet. Vel soluta distinctio 33 ipsum quia est veniam nostrum et animi delorim?"},
+{id:1,card_title:"Card Title",card_body:"Lorem ipsum dolor sit amet. Vel soluta distinctio 33 ipsum quia est veniam nostrum et animi delorim?"},
+{id:1,card_title:"Card Title",card_body:"Lorem ipsum dolor sit amet. Vel soluta distinctio 33 ipsum quia est veniam nostrum et animi delorim?"},
+{id:1,card_title:"Card Title",card_body:"Lorem ipsum dolor sit amet. Vel soluta distinctio 33 ipsum quia est veniam nostrum et animi delorim?"}]
+
+var first_button=document.getElementsByClassName("first_decorative_div")[0];
+var second_button=document.getElementsByClassName("second_decorative_div")[0];
+
+  first_button.addEventListener('click',function(e){
+     var Color=window.getComputedStyle(first_button).backgroundColor;
+      var all_cards=document.getElementsByClassName("card");
+    
+      for (var i = 0; i< all_cards.length;i++){
+          all_cards[i].classList.remove("bg-warning")
+          all_cards[i].classList.add("bg-primary")
+
+      }
+  })
+
+  second_button.addEventListener('click',function(e){
+    var Color=window.getComputedStyle(second_button).backgroundColor;
+     var all_cards=document.getElementsByClassName("card");
+     for (var i = 0; i< all_cards.length;i++){
+        all_cards[i].classList.remove("bg-primary")
+        all_cards[i].classList.add("bg-warning")
+        
+     }
+ })
+
+ 
+
+for(var l=0;l<inner_data.length;l++){
+    var wrapper_col=document.createElement('div');
+    wrapper_col.className='col-md-4 my-2 pr-0';
+
+}
+
+
+ for (var j = 0 ;j<inner_data.length;j++){
+    
+    var card_wrapper=document.createElement('div');
+ card_wrapper.classList.add('card','bg-primary','d-flex','flex-row','align-items-center','p-3');
+
+ var card_body=document.createElement('div');
+ card_body.classList.add('card-body')
+ var card_button=document.createElement('div');
+ card_button.classList.add('card-buton','ml-2');
+ var card_title=document.createElement('h5');
+ card_title.className='card_title text_white'
+ var card_text=document.createElement('p');
+ card_text.className='card_text text_white';
+ var button=document.createElement('button');
+ button.className='btn btn-danger'
+ button.textContent='Delete';
+ card_title.textContent=`${inner_data[j].card_title}`;
+ card_text.textContent=`${inner_data[j].card_body}`;
+ 
+ card_body.append(card_title);
+ card_body.append(card_text);
+ card_button.append(button);
+ card_wrapper.append(card_body);
+ card_wrapper.append(card_button);
+col_mids[j].append(card_wrapper);
+
+
+ }q 
+ var buttons= document.getElementsByClassName('btn');
+
+for (var u = 0 ;u<buttons.length;u++){
+   var string=u.toString()
+   buttons[u].className="btn btn-danger "+string;
+
+   
+   
+}
+
+var first_delete=document.getElementsByClassName('btn btn-danger 0')[0]
+first_delete.addEventListener('click',function(e){
+   first_delete.parentNode.parentNode.parentNode.removeChild(first_delete.parentNode.parentNode);
+   console.log(first_delete.parentElement);
+})
+
+var second_delete=document.getElementsByClassName('btn btn-danger 1')[0]
+second_delete.addEventListener('click',function(e){
+   second_delete.parentNode.parentNode.parentNode.removeChild(second_delete.parentNode.parentNode);
+   console.log(second_delete.parentElement);
+})
+
+var thord_delete=document.getElementsByClassName('btn btn-danger 2')[0]
+thord_delete.addEventListener('click',function(e){
+   thord_delete.parentNode.parentNode.parentNode.removeChild(thord_delete.parentNode.parentNode);
+   console.log(thord_delete.parentElement);
+})
+
+var fourth_delete=document.getElementsByClassName('btn btn-danger 3')[0]
+fourth_delete.addEventListener('click',function(e){
+   fourth_delete.parentNode.parentNode.parentNode.removeChild(fourth_delete.parentNode.parentNode);
+   console.log(fourth_delete.parentElement);
+})
+
+
+
+
+ console.log(buttons);
+
+ 
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.first_row {
+  background-color: none;
+}
+.first_row .first_decorative_div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+.first_row .second_decorative_div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}/*# sourceMappingURL=styles.css.map */
